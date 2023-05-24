@@ -10,6 +10,9 @@
 				"sound",
 				"alert"
 			]
+		},
+		"android": {
+			"path": "/snap/android-studio/126/android-studio/bin/studio.sh"
 		}
 	}
 }
