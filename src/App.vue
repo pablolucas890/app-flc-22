@@ -705,9 +705,9 @@ export default defineComponent({
     await this.load_from_storage();
     this.get_data_from_server();
     setInterval(this.get_data_from_server, 3*1000)
-    await registerNotifications()
-    addListeners();
-    getDeliveredNotifications();
+    // await registerNotifications() // Crash App
+    // addListeners(); // Just work on App
+    // getDeliveredNotifications(); // Just work on App
   },
   methods: {
     async load_from_storage() {
@@ -734,22 +734,27 @@ export default defineComponent({
       }
     },
     async get_data_from_server() {
-      let user = this.app_data.fastdata.simple.user;
-      let fastdata_url = this.base_url + "fastdata/" + user.tel;
-      let fastdata = await fetch_obj(fastdata_url);
-      // If user logged in while we were waiting for data, restore tel
-      if (user.tel && !fastdata.simple.user.tel)
-        fastdata.simple.user.tel = user.tel;
-      this.storage.set("fastdata", JSON.stringify(fastdata));
-      // Update fastdata view
-      this.app_data.fastdata = fastdata;
+      try {
+        let user = this.app_data.fastdata.simple.user;
+        let fastdata_url = this.base_url + "fastdata/" + user.tel;
+        let fastdata = await fetch_obj(fastdata_url);
+        // If user logged in while we were waiting for data, restore tel
+        if (user.tel && !fastdata.simple.user.tel)
+          fastdata.simple.user.tel = user.tel;
+        this.storage.set("fastdata", JSON.stringify(fastdata));
+        // Update fastdata view
+        this.app_data.fastdata = fastdata;
 
-      // check which complex data we need to update
-      for (let data of this.complex_data_keys) {
-        if (this.app_data[data].ver != this.app_data.fastdata.complex[data].ver) {
-          console.log("fetch complex", data, this.app_data[data].ver, this.app_data.fastdata.complex[data].ver);
-          await this.fetch_complex_data(data)
+        // check which complex data we need to update
+        for (let data of this.complex_data_keys) {
+          if (this.app_data[data].ver != this.app_data.fastdata.complex[data].ver) {
+            console.log("fetch complex", data, this.app_data[data].ver, this.app_data.fastdata.complex[data].ver);
+            await this.fetch_complex_data(data)
+          }
         }
+      } catch (error) {
+        console.log("--------------------------------------  Error on get_data_from_server function-----------------------------------")
+        console.log(error)
       }
     },
     async fetch_complex_data(data) {
