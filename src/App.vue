@@ -765,7 +765,7 @@ export default defineComponent({
     const storage = new Storage();
     const complex_data_keys = ["noticias", "niveis", "programacao", "coletas"];
     const storage_keys = complex_data_keys.concat(["fastdata"]);
-    const base_url = "https://www.mundorecicladores.com.br/_functions/"
+    const base_url = "https://helenfornazier.wixsite.com/mundorecicladores-1/_functions/"
     return {
       storage: storage,
       complex_data_keys: complex_data_keys,
