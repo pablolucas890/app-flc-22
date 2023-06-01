@@ -2,6 +2,19 @@
 http://ionicframework.com/docs/theming/ */
 
 /** Ionic CSS Variables **/
+
+@font-face {
+  font-family: VisbyCFBold;
+  src: url('../../public/assets/VisbyCF-Bold.otf');
+}
+
+@font-face {
+  font-family: VisbyCFRegular;
+  src: url('../../public/assets/VisbyCF-Regular.otf');
+}
+*{
+  font-family: VisbyCFRegular;
+}
 :root {
   /** side margin **/
     --mr-side-margin: 15px;
