@@ -13,15 +13,16 @@
           <ion-label>Guia Digital</ion-label>
         </ion-tab-button>
 
+        <ion-tab-button tab="help" href="/tabs/help">
+          <ion-icon :icon="helpCircleOutline" />
+          <ion-label>Como Funciona?</ion-label>
+        </ion-tab-button>
+        
         <ion-tab-button tab="perfil" href="/tabs/perfil">
           <ion-icon :icon="personOutline" />
           <ion-label>Minha Área</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="help" href="/tabs/help">
-          <ion-icon :icon="helpCircleOutline" />
-          <ion-label>Como Funciona?</ion-label>
-        </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
   </ion-page>
