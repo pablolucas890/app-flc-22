@@ -5,6 +5,8 @@
 ### All Ambientes:
 
 - NodeJs Version: `16.20.0`
+- Install ionic global:
+  - `npm install -g @ionic/cli`
 
 ## Android:
 
@@ -27,6 +29,7 @@ cmake.dir = /home/$USER/Android/Sdk/cmake/$CMAKE_VERSION
 - Build content files to generate apps (android and ios):
   `npm run build`
 - Generate splash screen and ic_laucher to android and ios
+  - Save `.png` icons on resources folder and
   `npm run generate-splash`
 - If you have the app installed before the build, uninstall it, because the app save on storage the old images and you needs remove to edit
 - Remove all images from the builds folders to app update with your images editions
