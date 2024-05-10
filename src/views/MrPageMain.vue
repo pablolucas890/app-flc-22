@@ -52,6 +52,7 @@ ion-content {
 #container_view {
   max-width: 700px;
   margin: auto;
+  padding-top: 20px;
 }
 .separator {
   width: 100%;
