@@ -94,7 +94,7 @@ const default_app_data = {
   noticias: {
     ver: 0,
     content: [
-      {data: "31/5/22 10:00", titulo: "Bem vindes!", descricao: "Preparados para mais um Forró?"}
+      {data: "31/5/22 10:00", titulo: "Boas Vindas!", descricao: "Preparados para mais um Forró?"}
     ],
   },
   programacao: {
