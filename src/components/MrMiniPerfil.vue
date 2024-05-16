@@ -10,7 +10,6 @@
             <div class="text">
                 <p>
                     <span class="perfil-text"><b>Olá, {{ user.nome }}</b> - Tel. {{ user.tel }}</span><br>
-                    <span class="nivel-text"><b>Nível {{ user.nivel }} - {{ user.titulo }}</b></span>
                 </p>
             </div>
         </div>
