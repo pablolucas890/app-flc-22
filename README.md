@@ -24,6 +24,8 @@ cmake.dir = /home/$USER/Android/Sdk/cmake/$CMAKE_VERSION
 ### All Ambientes:
 - Go to ambient branch:
   `git checkout android|ios`
+- Install packages:
+  `npm install`
 - Edit files an see editions with fast rebuild on browser:
   `npm run serve`
 - Build content files to generate apps (android and ios):
@@ -47,6 +49,29 @@ cmake.dir = /home/$USER/Android/Sdk/cmake/$CMAKE_VERSION
 
 ### IOS
 
-- Run `npx ionic cap open ios`
+- Run `npm run ios`
 - On Xcode, build app
 (If Xcode build return some error, comment the lines with careful to don't remove important things and build again)
+
+## Production
+
+### Android
+
+- Open Project at Android Studio IDE
+- Go to menu on top and click and Build -> Build Signed App Bundle
+- Select Android App Bundle
+- Select `mr-android.keystore` file
+- Set Helen global pass on Key store password field
+- Select `mr-android-key` on Key Alias
+- Set Helen global pass on Key password field 
+- Select Release and build the bundle app
+- Upload as new version o google play console
+
+### IOS
+
+- Open Project at XCode IDE
+- On `App Store Connect`, Create a new version of App with Text and Prints changes
+- Login on `SignIn` Menu with Helen iCloud account (because she is developer of app)
+- On top of bar, select Any iOS Device (arm64)
+- On menu select Product -> Archive
+- Wait package and when finish click in `Distribute App`
