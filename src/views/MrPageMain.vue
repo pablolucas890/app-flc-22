@@ -56,6 +56,6 @@ ion-content {
 }
 .separator {
   width: 100%;
-  height: 20px;
+  height: 30px;
 }
 </style>
